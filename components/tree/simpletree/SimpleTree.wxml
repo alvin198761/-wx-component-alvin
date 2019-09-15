@@ -1,0 +1,3 @@
+<!--components/tree/simpletree/SimpleTree.wxml-->
+<SimpleTreeNode wx:for="{{nodes}}" wx:for-item="node" wx:for-index="index" userObj="{{node}}" nodeIndex="{{index}}" wx:key="{{index}}" bind:nodeClick="nodeClick">
+</SimpleTreeNode>

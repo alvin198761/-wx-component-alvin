@@ -1,0 +1,15 @@
+<!--components/tree/simpletree/SimpleTreeNode.wxml-->
+<view bindtap="nodeClick" data-node="{{userObj}}" style="text-align: left ; padding-left: {{userObj.level * 5}}px ; background: #E6F3F9 ; line-height: 30px; border-bottom: 1px #cccccc thin;">
+  <block wx:if="{{userObj.hasChild}}">
+    {{userObj.expand ? "-" :"+"}}
+  </block>
+  <block wx:else>
+    {{'-'}}
+  </block>
+  {{userObj.title}}
+</view>
+<!-- 子节点绘制 -->
+<block wx:for="{{userObj.children}}" wx:key="{{index}}" wx:if="{{userObj.children && userObj.children.length > 0 && userObj.expand}}">
+  <SimpleTreeNode wx:for="{{userObj.children}}" wx:for-item="childNode" wx:for-index="childIndex" userObj="{{childNode}}" nodeIndex="{{childIndex}}" wx:key="{{childIndex}}" bind:nodeClick="childNodeClick">
+  </SimpleTreeNode>
+</block>

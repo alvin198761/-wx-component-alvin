@@ -1,0 +1,2 @@
+<!--pages/demo/simpletreedemo/SimpleTreeDemo.wxml-->
+<SimpleTree nodes="{{nodes}}"></SimpleTree>

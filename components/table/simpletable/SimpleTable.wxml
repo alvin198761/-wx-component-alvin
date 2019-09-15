@@ -1,0 +1,10 @@
+<!--components/table/simpletable/SimpleTable.wxml-->
+<!--table/simpletable/SimpleTable.wxml-->
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th" wx:for="{{columns}}" wx:for-item="c" wx:for-index="index" wx:key="{{c.key}}">{{c.title}}</view>
+  </view>
+  <view wx:for="{{data}}" wx:for-item="row" wx:for-index="index" wx:key="{{index}}" class="tr {{index % 2 == 0 ? 'bg-g' : ''}}">
+    <view class="td" wx:for="{{columns}}" wx:for-item="c" wx:for-index="cIndex" wx:key="{{c.key}}">{{row[c.key]}}</view>
+  </view>
+</view>
